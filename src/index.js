@@ -1,4 +1,4 @@
 import "./reset.css"
 import "./styles.css"
 
-console.log("webpack template");
+console.log("welcome to Donezo");
