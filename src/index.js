@@ -2,7 +2,6 @@
 
 import "./reset.css"
 import "./styles.css"
-import initializeSearchBar from "./searchBar";
+import "./searchBar.js"
 
 console.log("welcome to Donezo");
-initializeSearchBar();

@@ -16,6 +16,8 @@ header {
 	background-color: var(--header-bg);
 	display: flex;
 	padding: 10px var(--side-margins);
+	width: 100vw;
+	height: 50px;
 	align-items: center;
 	justify-content: center;
 }
@@ -39,6 +41,14 @@ header h1 {
 	outline: none;
 }
 
+.imgFilter {
+	fill: black;
+}
+
+.searchOutline {
+	border: 2px solid black;
+}
+
 #searchBarInput {
 	background-color: var(--main-bg);
 	border: none;
@@ -46,6 +56,8 @@ header h1 {
 	margin-left: 10px;
 	width: 90%;
 }
+
+
 
 #searchBarInput:focus {
 	outline: none;
