@@ -9,6 +9,11 @@ class Projects {
 	addTask(name, description, dueDate, priority) {
 		this.tasks.push(new Task(name, description, dueDate, priority));
 	}
+
+	getTask(index) {
+	return this.tasksArray[index];
+	}
+
 }
 
 export default Projects

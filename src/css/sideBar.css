@@ -1,0 +1,11 @@
+/* open side bar */
+
+:root {
+	--sidebar-bg: #EAE8E4;
+}
+
+.openSideBar {
+	height: 100%;
+	width: clamp(200px, 30%, 300px);
+	background-color: var(--sidebar-bg);
+}

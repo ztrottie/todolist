@@ -1,0 +1,32 @@
+/* style for this project */
+
+:root {
+	--text-color: #333333;
+	/* High contrast for readability */
+	--header-bg: #E0DCD6;
+	/* Soft header background */
+	--main-bg: #F8F7F5;
+	/* Subtle contrast for sidebars */
+	--side-margins: 20px
+}
+
+header {
+	background-color: var(--header-bg);
+	display: flex;
+	padding: 10px var(--side-margins);
+	width: 100vw;
+	height: 5vh;
+	align-items: center;
+	justify-content: center;
+}
+
+header h1 {
+	width: 7ch;
+	position: absolute;
+	left: var(--side-margins);
+}
+
+#content {
+	height: 95vh;
+	width: 100vw;
+}
