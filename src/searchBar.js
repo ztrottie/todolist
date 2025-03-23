@@ -14,3 +14,4 @@ searchBarInput.addEventListener("blur", () => {
 	searchBar.style.borderColor = "var(--main-bg)";
 	searchImgTag.src = searchImg
 })
+

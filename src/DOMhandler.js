@@ -1,5 +1,5 @@
 import "./css/sideBar.css"
-import "./img/"
+import sideNavButton from "./img/side_navigation.svg"
 
 const DOMhandler = (function () {
 	const content = document.getElementById("content");
@@ -11,10 +11,12 @@ const DOMhandler = (function () {
 		
 		const openCloseButton = document.createElement("button");
 		const openCloseButtonImg = document.createElement("img");
-		openCloseButtonImg.src = "";
+		openCloseButtonImg.src = sideNavButton;
 		
+		openCloseButton.appendChild(openCloseButtonImg);
 
-		content.appendChild(openSideBar)
+		openSideBar.appendChild(openCloseButton);
+		content.appendChild(openSideBar);
 	}
 
 	return {showSideBar}
