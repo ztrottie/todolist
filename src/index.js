@@ -7,4 +7,4 @@ import DOMhandler from "./DOMhandler.js"
 
 console.log("welcome to Donezo");
 
-DOMhandler.showSideBar();
+// DOMhandler.showSideBar();
