@@ -4,8 +4,21 @@
 	--sidebar-bg: #EAE8E4;
 }
 
-.openSideBar {
+#sidebar {
 	height: 100%;
-	width: clamp(200px, 30%, 300px);
 	background-color: var(--sidebar-bg);
+	display: flex;
+}
+
+.openSideBar {
+	width: clamp(200px, 30%, 300px);
+}
+
+.closedSideBar {
+	width: clamp(50px, 5%, 100px);
+}
+
+.sideBarHeading {
+	height: 5%;
+	display: flex;
 }

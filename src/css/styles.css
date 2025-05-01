@@ -10,12 +10,18 @@
 	--side-margins: 20px
 }
 
+body {
+	height: 100vh;
+	width: 100vw;
+}
+
+
 header {
 	background-color: var(--header-bg);
 	display: flex;
 	padding: 10px var(--side-margins);
-	width: 100vw;
-	height: 5vh;
+	width: 100%;
+	height: 5%;
 	align-items: center;
 	justify-content: center;
 }
@@ -26,7 +32,6 @@ header h1 {
 	left: var(--side-margins);
 }
 
-#content {
-	height: 95vh;
-	width: 100vw;
+#main {
+	height: 95%;
 }
