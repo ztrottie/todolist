@@ -1,7 +1,5 @@
-import Task from "./task";
-
-class Projects {
-	tasksList = [];
+class Task {
+	subTasksList = [];
 
 	constructor(title, desc, dueDate, priority) {
 		this.title = title;
@@ -26,21 +24,36 @@ class Projects {
 		return this.priority;
 	}
 
+	set title(title) {
+		this.title = title;
+	}
+
+	set desc(desc) {
+		this.desc = desc;
+	}
+
+	set dueDate(dueDate) {
+		this.dueDate = dueDate;
+	}
+
+	set priority(priority) {
+		this.priority = priority;
+	}
+
 	addSubTask(newTask) {
 		if (newTask instanceof Task) {
-			this.tasksList.push(newTask);
+			this.subTasksList.push(newTask);
 		}
 	}
 
 	removeTask(task) {
 		if (task instanceof Task) {
-			const index = this.tasksList.indexOf(task);
+			const index = this.subTasksList.indexOf(task);
 			if (index !== -1) {
-				this.tasksList.splice(index, 1);
+				this.subTasksList.splice(index, 1);
 			}
 		}
 	}
-
 }
 
-export default Projects;
+export default Task;

@@ -1,0 +1,19 @@
+:root {
+	--sidebarBackground: #bdb9b4;
+}
+
+.openSidebar {
+	width: 15%;
+	height: 100%;
+	background-color: var(--sidebarBackground);
+}
+
+.sidebarHeader {
+	height: 3em;
+	color: var(--text-color);
+	margin-left: var(--side-margins);
+	margin-right: var(--side-margins);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
