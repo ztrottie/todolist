@@ -3,27 +3,43 @@ import Task from "./task";
 class Projects {
 	tasksList = [];
 
-	constructor(title, desc, dueDate, priority) {
-		this.title = title;
-		this.desc = desc;
-		this.dueDate = dueDate;
-		this.priority = priority;
+	constructor() {
+		this._title = "";
+		this._desc = "";
+		this._dueDate = "";
+		this._priority = 0;
 	}
 
 	get title() {
-		return this.title;
+		return this._title;
 	}
 
 	get desc() {
-		return this.desc;
+		return this._desc;
 	}
 
 	get dueDate() {
-		return this.dueDate;
+		return this._dueDate;
 	}
 
 	get priority() {
-		return this.priority;
+		return this._priority;
+	}
+
+	set title(title) {
+		this._title = title;
+	}
+
+	set desc(desc) {
+		this._desc = desc;
+	}
+
+	set dueDate(dueDate) {
+		this._dueDate = dueDate;
+	}
+
+	set priority(priority) {
+		this._priority = priority;
 	}
 
 	addSubTask(title, desc, dueDate, priority) {

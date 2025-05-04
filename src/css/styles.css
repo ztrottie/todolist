@@ -30,4 +30,5 @@ header h1 {
 #main {
 	height: 95vh;
 	width: 100vw;
+	display: flex;
 }

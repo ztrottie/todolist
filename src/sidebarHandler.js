@@ -1,4 +1,7 @@
 import sideNavImg from "./img/side_navigation.svg"
+import deleteImg from "./img/delete.svg"
+import app from "./app";
+import contentHandler from "./contentHandler";
 
 const sidebarHandler = (function () {
 	const sidebarDiv = document.getElementById("sidebar");
@@ -35,18 +38,60 @@ const sidebarHandler = (function () {
 		return headerDiv;
 	}
 
-	function createAddProjectDiv() {
-		const addProjectDiv = document.createElement("div");
+	function createProjectDiv() {
+		const projectsDiv = document.createElement("div");
+		projectsDiv.id = "projectsDiv"
 		
 		const newProjectButton = document.createElement("button");
 		newProjectButton.id = "newProjectButton";
 		newProjectButton.textContent = "New project";
 
-		
+		newProjectButton.addEventListener("click", () => {
+			const newProject = app.addNewProject();
+			contentHandler.setSelected(newProject);
+		})
 
-		addProjectDiv.appendChild(newProjectButton);
+		const projectList = document.createElement("div");
+		projectList.id = "projectsListDiv";
 
-		return addProjectDiv;
+		projectsDiv.appendChild(newProjectButton);
+		projectsDiv.appendChild(projectList);
+
+		return projectsDiv;
+	}
+
+	function refresh() {
+		if (opened) {
+			cleanProjectDiv();
+			const projectsListDiv = document.getElementById("projectsListDiv");
+			const projectList = app.getProjectList();
+			console.log("another project");
+			for (let i = 0; projectList[i]; i++) {
+				const projectDiv = document.createElement("div");
+				
+				const title = document.createElement("p");
+				title.textContent = (projectList[i].title === "") ? "New Project" : projectList[i].title; 
+
+				const deleteButton = document.createElement("button");
+				const buttonImg = document.createElement("img");
+				buttonImg.src = deleteImg;
+
+				deleteButton.appendChild(buttonImg);
+
+				projectDiv.appendChild(title);
+				projectDiv.appendChild(deleteButton);
+
+				projectsListDiv.appendChild(projectDiv);
+			}
+		}
+	}
+
+	function cleanProjectDiv() {
+		const projectsDiv = document.getElementById("projectsListDiv");
+
+		while (projectsDiv.firstChild) {
+			projectsDiv.removeChild(projectsDiv.firstChild);
+		}
 	}
 	
 	function open() {
@@ -60,7 +105,7 @@ const sidebarHandler = (function () {
 		headerDiv.appendChild(headerTitle);
 		headerDiv.appendChild(createSidebarButton());
 
-		const addProjectDiv = createAddProjectDiv();
+		const addProjectDiv = createProjectDiv();
 
 		sidebarDiv.appendChild(headerDiv);
 		sidebarDiv.appendChild(addProjectDiv);
@@ -83,7 +128,7 @@ const sidebarHandler = (function () {
 	}
 
 
-	return { open }
+	return { open, refresh }
 })();
 
 export default sidebarHandler
