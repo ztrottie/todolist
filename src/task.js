@@ -40,10 +40,8 @@ class Task {
 		this.priority = priority;
 	}
 
-	addSubTask(newTask) {
-		if (newTask instanceof Task) {
-			this.subTasksList.push(newTask);
-		}
+	addSubTask(title, desc, dueDate, priority) {
+			this.subTasksList.push(new Task(title, desc, dueDate, priority));
 	}
 
 	removeTask(task) {

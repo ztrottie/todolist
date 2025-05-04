@@ -26,10 +26,8 @@ class Projects {
 		return this.priority;
 	}
 
-	addSubTask(newTask) {
-		if (newTask instanceof Task) {
-			this.tasksList.push(newTask);
-		}
+	addSubTask(title, desc, dueDate, priority) {
+		this.tasksList.push(new Task(title, desc, dueDate, priority));
 	}
 
 	removeTask(task) {
