@@ -49,6 +49,7 @@ const sidebarHandler = (function () {
 		newProjectButton.addEventListener("click", () => {
 			const newProject = app.addNewProject();
 			contentHandler.setSelected(newProject);
+			refresh();
 		})
 
 		const projectList = document.createElement("div");
@@ -68,7 +69,8 @@ const sidebarHandler = (function () {
 			console.log("another project");
 			for (let i = 0; projectList[i]; i++) {
 				const projectDiv = document.createElement("div");
-				
+				projectDiv.classList.add("projectListItem");
+
 				const title = document.createElement("p");
 				title.textContent = (projectList[i].title === "") ? "New Project" : projectList[i].title; 
 

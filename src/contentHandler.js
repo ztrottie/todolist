@@ -1,3 +1,4 @@
+import sidebarHandler from "./sidebarHandler";
 
 const contentHandler = (function () {
 	let selected;
@@ -10,18 +11,41 @@ const contentHandler = (function () {
 	}
 
 	function createProjectTitle() {
-		const TitleHeader = document.createElement("input");
-		TitleHeader.type = "text";
-		TitleHeader.placeholder = "New Project";
+		const titleHeader = document.createElement("input");
+		titleHeader.type = "text";
+		titleHeader.placeholder = "New Project";
+		titleHeader.addEventListener("input", (e) => {
+			selected.title = e.target.value
+			sidebarHandler.refresh();
+			console.log(`The title is changed to ${selected.title}`)
+		})
 
-		return TitleHeader;
+		return titleHeader;
+	}
+
+	function createProjectDesc() {
+		const projectDesc = document.createElement("input");
+		projectDesc.type = "text";
+		projectDesc.placeholder = "Description...";
+		projectDesc.addEventListener("input", (e) => {
+			selected.desc = e.target.value
+			console.log(`description changed to ${selected.desc}`)
+		})
+		return projectDesc
+	}
+
+	function createTaskDiv() {
+		const taskDiv = document.createElement("div");
+		taskDiv.id = "taskDiv"
+		return taskDiv
 	}
 
 	function createContentHeading() {
 		const contentHeading = document.createElement("div");
 
 		contentHeading.appendChild(createProjectTitle());
-
+		contentHeading.appendChild(createProjectDesc());
+		contentHeading.appendChild(createTaskDiv());
 		return contentHeading;
 	}
 

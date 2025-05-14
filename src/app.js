@@ -7,7 +7,7 @@ const app = (function () {
 		let newProject = new Projects();
 		ProjectsList.push(newProject);
 		console.log(`added new item ${newProject.title}, to ${ProjectsList}`)
-		return (ProjectsList[ProjectsList.indexOf(newProject)])
+		return (ProjectsList[ProjectsList.length - 1])
 	}
 
 	function getProjectList() {

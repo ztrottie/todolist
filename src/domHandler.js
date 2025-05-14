@@ -7,9 +7,6 @@ const domHandler = (function () {
 		sidebarHandler.open();
 	}
 
-	function refresh() {
-		
-	}
 	return { openSidebar }
 })();
 
