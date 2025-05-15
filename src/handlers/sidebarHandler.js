@@ -1,65 +1,11 @@
-import sideNavImg from "./img/side_navigation.svg"
-import deleteImg from "./img/delete.svg"
-import app from "./app";
+import deleteImg from ".//assets/icons/delete.svg"
+import app from "../app";
 import contentHandler from "./contentHandler";
 
 const sidebarHandler = (function () {
 	const sidebarDiv = document.getElementById("sidebar");
 	let opened = true;
 
-	function createSidebarButton() {
-		const sidebarButton = document.createElement("button");
-		sidebarButton.classList.add(".sidebarButton");
-
-		sidebarButton.addEventListener("click", () => {
-			if (opened) {
-				console.log("closing the sidebar...")
-				clear()
-				close();
-			} else {
-				console.log("opening the sidebar");
-				clear()
-				open();
-			}
-			opened = !opened;
-		})
-
-		
-		const sidebarButtonImg = document.createElement("img");
-		sidebarButtonImg.src = sideNavImg;
-		
-		sidebarButton.appendChild(sidebarButtonImg);
-		return sidebarButton;
-	}
-
-	function createSidebarHeader() {
-		const headerDiv = document.createElement("div");
-		headerDiv.classList.add("sidebarHeader");
-		return headerDiv;
-	}
-
-	function createProjectDiv() {
-		const projectsDiv = document.createElement("div");
-		projectsDiv.id = "projectsDiv"
-		
-		const newProjectButton = document.createElement("button");
-		newProjectButton.id = "newProjectButton";
-		newProjectButton.textContent = "New project";
-
-		newProjectButton.addEventListener("click", () => {
-			const newProject = app.addNewProject();
-			contentHandler.setSelected(newProject);
-			refresh();
-		})
-
-		const projectList = document.createElement("div");
-		projectList.id = "projectsListDiv";
-
-		projectsDiv.appendChild(newProjectButton);
-		projectsDiv.appendChild(projectList);
-
-		return projectsDiv;
-	}
 
 	function refresh() {
 		if (opened) {
@@ -127,7 +73,7 @@ const sidebarHandler = (function () {
 		while (sidebarDiv.firstChild) {
 			sidebarDiv.removeChild(sidebarDiv.firstChild);
 		}
-	}
+	} 
 
 
 	return { open, refresh }
