@@ -12,7 +12,9 @@ const app = (function () {
 	function removeProject(project) {
 		const index = projectList.indexOf(project);
 
-		projectList.splice(index, 1);
+		if (index >= 0) {
+			projectList.splice(index, 1);
+		}
 	}
 
 	function getList() {

@@ -3,6 +3,7 @@ import sidebar from "./sidebar";
 
 export default function sidebarButton() {
 	const button = document.createElement("button");
+	button.classList.add("clickable")
 
 	button.id = "sidebarButton";
 

@@ -4,7 +4,7 @@ import deletImg from "../../../assets/icons/delete.svg"
 
 export default function projectDeleteButton(project) {
 	const button = document.createElement("button");
-
+	button.classList.add("clickable")
 	button.classList.add("projectDeleteButton");
 
 	button.addEventListener("click", () => {

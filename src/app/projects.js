@@ -1,4 +1,5 @@
 import Task from "./tasks.js";
+import projectList from "../components/sidebar/projectList/projectList.js";
 
 class Projects {
 	tasksList = [];
@@ -28,6 +29,7 @@ class Projects {
 
 	set title(title) {
 		this._title = title;
+		projectList.updateItem(this);
 	}
 
 	set desc(desc) {

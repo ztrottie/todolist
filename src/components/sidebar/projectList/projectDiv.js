@@ -4,6 +4,7 @@ import projectDeleteButton from "./projectDeleteButton";
 export default function projectDiv(project) {
 	const projectDiv = document.createElement("div");
 	projectDiv.classList.add("projectDiv");
+	projectDiv.classList.add("clickable")
 
 	projectDiv.addEventListener("mouseover", () => {
 		projectDiv.style.backgroundColor = "var(--overBackground)";
@@ -15,7 +16,7 @@ export default function projectDiv(project) {
 
 	projectDiv.addEventListener("click", (e) => {
 		if (!e.target.classList.contains("ProjectDeleteButton")) {
-			content.select(project);
+			content.select(project, projectDiv);
 			console.log(`Selecting ${project.title}`)
 		} 
 	})
@@ -24,6 +25,6 @@ export default function projectDiv(project) {
 	title.textContent = (project.title === "") ? "New Project" : project.title;
 
 	projectDiv.appendChild(title);
-	projectDiv.appendChild(projectDeleteButton());
+	projectDiv.appendChild(projectDeleteButton(project));
 	return projectDiv
 }
