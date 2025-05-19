@@ -1,5 +1,6 @@
 :root {
 	--sidebarBackground: #bdb9b4;
+	--overBackground: #8f8c89;
 }
 
 #sidebar {
@@ -17,32 +18,10 @@
 }
 
 .sidebarHeader {
-	height: 3em;
-	color: var(--text-color);
-	margin-left: var(--side-margins);
-	margin-right: var(--side-margins);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-#projectListDiv {
-	width: 90%;
-	height: 90%;
 	display: flex;
 }
 
-.projectListItem{
+.projectDiv {
 	display: flex;
-	width: 80%;
-	height: 3rem;
-}
-
-.projectListItem p {
-	width: 70%;
-}
-
-.projectListItem button {
-	width: auto;
-	height: 2rem;
+	justify-content: space-evenly;
 }

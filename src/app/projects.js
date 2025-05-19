@@ -1,4 +1,4 @@
-import Task from "./task";
+import Task from "./tasks.js";
 
 class Projects {
 	tasksList = [];

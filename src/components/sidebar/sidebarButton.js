@@ -1,23 +1,18 @@
-import sideNavImg from "../../assets/icons/close.svg"
+import sidenavImg from "../../assets/icons/side_navigation.svg"
+import sidebar from "./sidebar";
 
 export default function sidebarButton() {
-		const sidebarButton = document.createElement("button");
-		sidebarButton.classList.add("sidebarButton");
+	const button = document.createElement("button");
 
-		sidebarButton.addEventListener("click", () => {
-			if (opened) {
-				clear();
-				close();
-			} else {
-				open();
-			}
-			opened = !opened;
-		})
+	button.id = "sidebarButton";
 
-		
-		const sidebarButtonImg = document.createElement("img");
-		sidebarButtonImg.src = sideNavImg;
-		
-		sidebarButton.appendChild(sidebarButtonImg);
-		return sidebarButton;
-	}
+	button.addEventListener("click", () => {
+		sidebar.toggle();
+	})
+
+	const buttonImg = document.createElement("img");
+	buttonImg.src = sidenavImg
+
+	button.appendChild(buttonImg);
+	return button;
+}

@@ -3,9 +3,7 @@
 import "./css/reset.css"
 import "./css/styles.css"
 import "./css/sidebar.css"
-import domHandler from "./domHandler";
+import domHandler from "./domHanlder"
 
-console.log("welcome to Donezo");
-
-domHandler.openSidebar();
+domHandler.init()
 
