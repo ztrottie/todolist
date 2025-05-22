@@ -3,11 +3,9 @@ import contentHeader from "./contentHeader";
 const content = (function () {
 	const contentDiv = document.getElementById("content")
 	let selected;
-	let card;
 	
-	function select(project, newCard) {
+	function select(project) {
 		selected = project;
-		card = newCard
 		update();
 	}
 
@@ -23,7 +21,8 @@ const content = (function () {
 
 	function update() {
 		clear();
-		init();
+		if (selected)
+			init();
 	}
 
 	return { select }

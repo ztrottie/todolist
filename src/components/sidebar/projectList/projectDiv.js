@@ -1,5 +1,6 @@
 import content from "../../content/content";
 import projectDeleteButton from "./projectDeleteButton";
+import projectList from "./projectList";
 
 export default function projectDiv(project) {
 	const projectDiv = document.createElement("div");
@@ -15,10 +16,9 @@ export default function projectDiv(project) {
 	})
 
 	projectDiv.addEventListener("click", (e) => {
-		if (!e.target.classList.contains("ProjectDeleteButton")) {
-			content.select(project, projectDiv);
-			console.log(`Selecting ${project.title}`)
-		} 
+		content.select(project);
+		projectList.setSelected(project);
+		console.log(`Selecting ${project.title}`);
 	})
 
 	const title = document.createElement("p");

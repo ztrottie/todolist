@@ -7,7 +7,8 @@ export default function projectDeleteButton(project) {
 	button.classList.add("clickable")
 	button.classList.add("projectDeleteButton");
 
-	button.addEventListener("click", () => {
+	button.addEventListener("click", (e) => {
+		e.stopPropagation();
 		app.removeProject(project);
 		projectList.update();
 	})
